@@ -78,7 +78,6 @@ Esta aplicación transcribe archivos de audio a texto utilizando el modelo Whisp
 ## Notas
 
 *   La aplicación utiliza el modelo Whisper-1 para la transcripción.
-*   La estimación de costos es aproximada y puede variar.
 *   El tamaño máximo del archivo es de 30MB.
 
 ## Contribución

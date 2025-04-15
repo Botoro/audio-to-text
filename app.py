@@ -42,7 +42,8 @@ st.set_page_config(
 
 st.title("Transcripción texto a audio")
 
-api_key = st.text_input("Ingresa tu API Key", type="password")
+api_key = st.text_input("Ingresa tu API Key", type="password", help="Tu API Key de OpenAI. \
+    Puedes obtenerla en [OpenAI](https://platform.openai.com/account/api-keys)")
 if api_key:
     client = OpenAI(api_key=api_key)
 
