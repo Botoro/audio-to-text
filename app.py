@@ -60,6 +60,10 @@ if api_key:
         help=f"Tipos de archivo permitidos: {', '.join(allowed_audio_types)}. \
             Tamaño máximo: {MAX_FILE_SIZE_MB} MB"
     )
+    st.write("**IMPORTANTE** El Costo estimado de traducción es de **$0.006 USD** por minuto de audio.")
+    st.caption("**Nota:** El modelo utilizado es Whisper-1. \
+        Consulta la [página de precios](https://platform.openai.com/docs/pricing) \
+        para obtener más información sobre los costos.")
 
     if audio_file:
         if audio_file.size > MAX_FILE_SIZE_BYTES:
@@ -74,10 +78,7 @@ if api_key:
                 temp_audio_path = tmp_file.name
 
 
-            st.write("El Costo estimado de traducción es de **$0.006 USD** por minuto de audio.")
-            st.caption("**Nota:** El modelo utilizado es Whisper-1. \
-                Consulta la [página de precios](https://platform.openai.com/docs/pricing) \
-                para obtener más información sobre los costos.")
+        
 
             with open(temp_audio_path, "rb") as audio_file:
                 try:
