@@ -13,11 +13,10 @@ Esta aplicación transcribe archivos de audio a texto utilizando el modelo Whisp
 1.  **Clona el repositorio:**
 
     ```bash
-    git clone <URL_del_repositorio>
+    git clone https://github.com/Botoro/audio-to-text.git
     cd audio-a-texto
     ```
 
-    Reemplaza `<URL_del_repositorio>` con la URL real de tu repositorio.
 
 2.  **Crea un entorno virtual (recomendado):**
 
