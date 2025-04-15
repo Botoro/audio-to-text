@@ -3,7 +3,6 @@ import datetime
 import tempfile
 import os
 import streamlit as st
-from pydub import AudioSegment
 from openai import OpenAI
 
 # Configuración
@@ -74,18 +73,11 @@ if api_key:
                 tmp_file.write(audio_file.read())
                 temp_audio_path = tmp_file.name
 
-            try:
-                audio = AudioSegment.from_file(temp_audio_path)
-                duration_minutes = len(audio) / 60000
-            except Exception as e:
-                st.error(f"Error al cargar el archivo de audio: {e}")
-                os.remove(temp_audio_path)
-                st.stop()
 
-            estimated_cost = duration_minutes * 0.006
-            st.write(f"Duración del audio: {duration_minutes:.2f} minutos")
-            st.write(f"**Costo estimado:** ${estimated_cost:.4f} USD")
-            st.caption("**Nota:** El costo real puede variar. Consulta la [página de precios](https://platform.openai.com/docs/pricing). **Modelo utilizado:** Whisper-1")
+            st.write("El Costo estimado de traducción es de **$0.006 USD** por minuto de audio.")
+            st.caption("**Nota:** El modelo utilizado es Whisper-1. \
+                Consulta la [página de precios](https://platform.openai.com/docs/pricing) \
+                para obtener más información sobre los costos.")
 
             with open(temp_audio_path, "rb") as audio_file:
                 try:
